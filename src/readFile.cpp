@@ -8,8 +8,8 @@ std::string readFile(const std::string& fileName) {
 	std::string result;
 	std::string line;
 	while (std::getline(in, line)) {
-			result += line + '\n';
-		}
+		result += line + '\n';
+	}
 	return result;
 }
 
