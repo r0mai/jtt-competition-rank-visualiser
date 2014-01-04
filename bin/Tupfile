@@ -1,0 +1,5 @@
+
+include_rules
+
+: ../src/*.o |> g++ %f `pkg-config --libs gumbo` -o %o |> parse
+
