@@ -23,3 +23,26 @@ std::string GumboNodeToString(GumboNode *node, int indent) {
 	return ss.str();
 }
 
+GumboNode *findTag(GumboNode *node, GumboTag tag) {
+	if (node->type != GUMBO_NODE_ELEMENT) {
+		return nullptr;
+	}
+
+	if (node->v.element.tag == tag) {
+		return node;
+	}
+
+	GumboVector *children = &node->v.element.children;
+	for (int i = 0; i < children->length; ++i) {
+		GumboNode *result = findTag(static_cast<GumboNode*>(children->data[i]), tag);
+		if (result) {
+			return result;
+		}
+	}
+	return nullptr;
+}
+
+StringMatrix htmlTableToStringMatrix(GumboNode *table) {
+	return StringMatrix{};
+}
+
