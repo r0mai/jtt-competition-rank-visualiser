@@ -14,6 +14,8 @@ BEGIN {
 {
 	if ( 0 != match($0, "<tr class=\"impair2\"><td><td class=\"right_(best)?temps\">([0-9:.]*)</td></td><td class=\"right_date\">([a-zA-Z0-9: ]*)</td></tr>", a) ) {
    		printf "%s/%d/%s/%s\n", player, mapIndex, substr($0, a[2, "start"], a[2, "length"]), substr($0, a[3, "start"], a[3, "length"])
+	} else if ( 0 != match($0, "<tr class=\"impair2\"><td class=\"right_(best)?temps\">([0-9:.]*)</td></td><td class=\"right_date\">([a-zA-Z0-9: ]*)</tr>", b) ) {
+   		printf "%s/%d/%s/%s\n", player, mapIndex, substr($0, b[2, "start"], b[2, "length"]), substr($0, b[3, "start"], b[3, "length"])
 	}
 
 }
