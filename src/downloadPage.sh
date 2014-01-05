@@ -6,5 +6,5 @@ if [ $# -ne 2 ]; then
 	exit 1
 fi
 
-curl --progress-bar -o "$2" "$1"
+curl --silent -o "$2" "$1"
 
