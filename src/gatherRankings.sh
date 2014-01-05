@@ -4,6 +4,8 @@ mkdir -p "tmp"
 
 aggregatedFile="tmp/aggregatedFile"
 
+rm -f ${aggregatedFile}
+
 for playerIndex in {1..10}; do
 	tmpFile="tmp/tmp"
 
