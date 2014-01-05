@@ -5,4 +5,5 @@
 [._]s[a-w][a-z]
 .fuse_hidden*
 /tmp/
+/aggregatedFile
 

@@ -14,5 +14,7 @@ for playerIndex in {1..10}; do
 	rm -f ${tmpFile}
 done
 
+bin/createStats < ${aggregatedFile}
+
 rm -f ${aggregatedFile}
 
