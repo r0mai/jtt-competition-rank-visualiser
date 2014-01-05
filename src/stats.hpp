@@ -10,7 +10,7 @@
 typedef std::set<Map> MapSet;
 
 MapSet getMaps(const Events& events);
-Ranking getRankings(const Events& events, const Date& date);
+Ranking getRankings(const Events& events, const Date& date = Date(boost::posix_time::pos_infin));
 
 #endif
 

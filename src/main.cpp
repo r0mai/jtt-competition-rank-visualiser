@@ -37,7 +37,7 @@ int main() {
 
 	std::cout << "Last event: " << events.back() << std::endl;
 
-	Ranking ranking = getRankings(events, Date());
+	Ranking ranking = getRankings(events, boost::posix_time::time_from_string("2014-01-03 22:00:00.000"));
 	for ( unsigned i = 0; i < 20 && i < ranking.size(); ++i ) {
 		std::cout << i+1 << ".: " << ranking[i].getPlayer() << ", Time: " << ranking[i].getTotalLapTime() << std::endl;
 	}

@@ -18,6 +18,9 @@ Ranking getRankings(const Events& events, const Date& date) {
 	typedef std::map<Player, RankRow> RankMap;
 	RankMap rankMap;
 	for ( const Event& event : events ) {
+		if ( event.date > date ) {
+			continue;
+		}
 		auto it = rankMap.find(event.player);
 		if ( it == rankMap.end() ) {
 			RankRow row(event.player);
