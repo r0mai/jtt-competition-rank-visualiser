@@ -23,7 +23,7 @@ int main() {
 		Event e;
 		e.player = elements[0];
 		e.map = elements[1];
-		e.lapTime = elements[2];
+		e.lapTime = parseLapTime(elements[2]);
 		e.date = parseDate(elements[3]);
 
 		events.push_back(e);
