@@ -21,6 +21,8 @@ struct Event {
 	Date date;
 };
 
+bool operator<(const Event& lhs, const Event& rhs);
+
 std::ostream& operator<<(std::ostream& os, const Event& event);
 
 #endif

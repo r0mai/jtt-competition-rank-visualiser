@@ -27,9 +27,12 @@ int main() {
 		e.date = parseDate(elements[3]);
 
 		events.push_back(e);
-		std::cout << e << std::endl;
 	}
 
-	std::cout << events.size() << std::endl;
+	std::cout << "Number of events: " << events.size() << std::endl;
+
+	std::sort(events.begin(), events.end());
+
+	std::cout << "Last event: " << events.back() << std::endl;
 }
 

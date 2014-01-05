@@ -21,6 +21,10 @@ LapTime parseLapTime(const std::string& lapTimeString) {
 	return LapTime(boost::posix_time::duration_from_string("00:" + lapTimeString));
 }
 
+bool operator<(const Event& lhs, const Event& rhs) {
+	return lhs.date < rhs.date;
+}
+
 std::ostream& operator<<(std::ostream& os, const Event& event) {
 	os << "Player: " << event.player << "; Map: " << event.map << "; Date: " << event.date << "; LapTime: " << event.lapTime;
 	return os;
