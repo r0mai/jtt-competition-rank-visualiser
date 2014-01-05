@@ -8,6 +8,7 @@
 
 #include "Event.hpp"
 #include "Events.hpp"
+#include "stats.hpp"
 
 int main() {
 	std::string line;
@@ -35,5 +36,12 @@ int main() {
 	std::sort(events.begin(), events.end());
 
 	std::cout << "Last event: " << events.back() << std::endl;
+
+	Ranking ranking = getRankings(events, Date());
+	for ( unsigned i = 0; i < 20 && i < ranking.size(); ++i ) {
+		std::cout << i+1 << ".: " << ranking[i].getPlayer() << ", Time: " << ranking[i].getTotalLapTime() << std::endl;
+	}
+
+	std::cout << "Current leader = " << ranking[0].getTotalLapTime() << std::endl;
 }
 
