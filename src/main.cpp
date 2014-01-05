@@ -7,11 +7,12 @@
 #include <boost/algorithm/string.hpp>
 
 #include "Event.hpp"
+#include "Events.hpp"
 
 int main() {
 	std::string line;
 
-	std::vector<Event> events;
+	Events events;
 
 	while (std::getline(std::cin, line)) {
 		std::vector<std::string> elements;
