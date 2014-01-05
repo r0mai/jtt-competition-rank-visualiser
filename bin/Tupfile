@@ -1,5 +1,5 @@
 
 include_rules
 
-: ../src/*.o |> g++ %f -o %o |> createStats
+: ../src/*.o |> g++ %f -lboost_date_time -o %o |> createStats
 
