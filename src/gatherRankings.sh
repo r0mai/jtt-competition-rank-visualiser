@@ -31,6 +31,8 @@ if [ "${doDownload}" == "true" ]; then
 
 		src/downloadPage.sh "95.130.9.140/TM/Trophee2014/Resultats_hiver/statistiques_joueur.php?joueur=${playerIndex}" ${playerPage}
 	done
+
+	reWriteLine "Downloading done"
 fi
 
 if [ ! -d "tmp" ]; then
@@ -51,6 +53,8 @@ for playerPage in $(ls tmp/*.web); do
 
 	awk -f src/parseRankPage.awk -v player=${playerIndex} ${playerPage} >> "${aggregatedFile}"
 done
+
+reWriteLine "Parsing done"
 
 echo "Processing..."
 
