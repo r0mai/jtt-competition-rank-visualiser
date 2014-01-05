@@ -1,5 +1,5 @@
 
 include_rules
 
-: foreach *.cpp |> g++ -std=c++11 `pkg-config --cflags gumbo` -c %f -o %o |> %B.o
+: foreach *.cpp |> g++ -std=c++11 -c %f -o %o |> %B.o
 

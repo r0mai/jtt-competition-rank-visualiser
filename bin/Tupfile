@@ -1,5 +1,5 @@
 
 include_rules
 
-: ../src/*.o |> g++ %f `pkg-config --libs gumbo` -o %o |> parse
+: ../src/*.o |> g++ %f -o %o |> createStats
 
